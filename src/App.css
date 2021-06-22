@@ -1,38 +1,178 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+}
+
+.night-mode {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.brand-light {
+  color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar {
+  width: 13px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar-track {
+  background-color: rgba(201, 201, 201, 0.5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-webkit-scrollbar-thumb {
+  background-color: #757575;
+  border: 3px solid transparent;
+  border-radius: 9px;
+  background-clip: content-box;
+}
+
+.cryptoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 370px);
+  grid-row-gap: 8rem;
+  place-items: center;
+  width: 100%;
+  margin: 4rem auto;
+  flex-wrap: wrap;
+}
+
+.icons,
+.icons2 {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  padding: 5px;
+}
+
+.icons2 > * {
+  color: hsl(0, 88%, 51%);
+}
+
+.icons > * {
+  color: #04e268;
+}
+
+.icons p {
+  margin-left: 10px;
+}
+
+.brand {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btc {
+  margin-right: 10px;
+  margin-top: 25px;
+  font-size: 40px;
+  color: rgb(247, 147, 26);
+  transform: rotate(15deg);
+}
+
+.cryptoImg {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+}
+
+.cryptoDiv {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(252, 251, 251);
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 4px 9px -1px rgba(0, 0, 0, 0.86);
+  box-shadow: 1px 3px 6px -1px rgba(0, 0, 0, 0.86);
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  margin: 0px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+form input {
+  outline: none;
+  border: none;
+  font-size: 17px;
+  height: 40px;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(54, 54, 54);
+}
+
+.inputNight {
+  border-bottom: 1px solid white;
+}
+
+.inputNight:focus {
+  color: #fff;
+}
+
+.inputNight::placeholder {
+  color: #fff;
+}
+
+.heading {
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.cryptoDark {
+  background-color: #fff;
+}
+
+.toggler {
+  margin-top: 15px;
+  margin-right: 25px;
+  float: right;
+  display: flex;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.toggler > * {
+  font-size: 25px;
+  transition: 0.5s ease;
+}
+
+@media (max-width: 1100px) {
+  .cryptoContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 770px) {
+  .cryptoContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
+  .cryptoDiv {
+    padding: 15px;
+    width: 280px;
   }
 }
